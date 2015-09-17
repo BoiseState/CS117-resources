@@ -24,7 +24,7 @@ int main() {
     //cout << res;
 
     //2. Check to see if the string entered by the user is == "yes"
-    if (res == "yes" || res == "Yes" || res == "YES") {
+    if (res == "yes" || res == "Yes" || res == "YES" ) {
         //cout << "BOOM yap got herer!";
         //2a. Ask for the grade
         cout << "Well then enter your grade yo!";
