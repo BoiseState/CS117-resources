@@ -5,8 +5,6 @@
 using namespace std;
 
 void writeGradesToFile(vector<int> hw);
-
-
 vector<int> readGradesFromFile();
 
 
@@ -19,13 +17,14 @@ int main() {
     } else {
         cout << "How many homework assignments do you have?:";
         cin >> num_hw;
+        if (num_hw <= 0) {
+            cout << "Well then thanks for playing ... :( " << endl;
+            exit(EXIT_SUCCESS);
+        }
         hw.resize(num_hw, 0);
     }
 
-    if (num_hw <= 0) {
-        cout << "Well then thanks for playing ... :( " << endl;
-        exit(EXIT_SUCCESS);
-    }
+
 
     cout << "Welcome to our grade calculator (vectors) " << endl;
     cout << "------------------------------- " << endl;
@@ -71,6 +70,7 @@ int main() {
     return 0;
 }
 
+
 void writeGradesToFile(vector<int> hw) {
     ofstream outFS; //get an output stream
     outFS.open("my_grades.txt");
@@ -91,7 +91,7 @@ vector<int> readGradesFromFile() {
     ifstream inFS;   // Input file stream
     int grade = 0; // File data
     vector<int> rval;
-    cout << "Opening file myfile.txt." << endl;
+    cout << "Opening file my_grades.txt." << endl;
     inFS.open("my_grades.txt");
     if (!inFS.is_open()) {
         cout << "Could not open file my_grades.txt." << endl;
@@ -104,6 +104,6 @@ vector<int> readGradesFromFile() {
         rval.push_back(grade);
         inFS >> grade;
     }
-    cout << "Closing file myfile.txt." << endl;
+    cout << "Closing file my_grades.txt." << endl;
     inFS.close();
 }
