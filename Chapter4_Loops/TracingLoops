@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+    string simonPattern;
+    string userPattern;
+    int userScore = 0;
+    int i = 0;
+
+
+3    cout << "userScore: " << userScore << endl;
+
+    int sum = 4;
+    int num = 0;
+    cin >> num;
+    for ( int j=1 ; j <= 5; j++)
+    {
+        sum = sum + num;
+        cin >> num;
+    }
+    cout << sum << endl;
+   return 0;
+}
