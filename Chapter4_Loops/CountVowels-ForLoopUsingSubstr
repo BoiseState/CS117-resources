@@ -1,0 +1,63 @@
+// countVowels.cpp : Defines the entry point for the console application.
+//
+
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+
+
+
+/*
+Function countVowels
+	Count the number of vowels in a string.
+
+Inputs:
+	string: word - the word we wish the count the vowels from
+
+Outputs:
+	int: the number of vowels in the word
+
+Assumptions / Limitations:
+	None
+*/
+
+
+int countVowels(string word)
+{
+	int numVowels = 0;
+	string vowels = "aeiouAEIOU";
+
+	for (int i = 0; i < word.length(); i++)
+	{
+		string character = word.substr(i, 1);
+		if (vowels.find(character) != string::npos)
+		{
+			numVowels++;
+		}
+	}
+
+
+	return numVowels;
+}
+
+
+int main()
+{
+
+	string word;
+
+
+	cout << "Enter word: ";
+	cin >> word;
+
+
+
+
+	int numVowels = countVowels(word);
+
+	cout << "You entered the word '" << word << "', which contains " << numVowels << " vowels." << endl;
+
+	return 0;
+}
