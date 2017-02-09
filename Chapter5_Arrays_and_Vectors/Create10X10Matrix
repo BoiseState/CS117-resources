@@ -1,0 +1,67 @@
+// Create10By10_matrix.cpp : Defines the entry point for the console application.
+//
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+//
+// This program will create a 10 X 10 matrix.
+// All matrix 'cells' will be 0, except for 
+// the boarder:
+//
+// 1 1 1 1 1 1 1 1 1 1 
+// 1 0 0 0 0 0 0 0 0 1
+// 1 0 0 0 0 0 0 0 0 1
+// 1 0 0 0 0 0 0 0 0 1
+// 1 0 0 0 0 0 0 0 0 1
+// 1 0 0 0 0 0 0 0 0 1
+// 1 0 0 0 0 0 0 0 0 1
+// 1 0 0 0 0 0 0 0 0 1
+// 1 0 0 0 0 0 0 0 0 1
+// 1 1 1 1 1 1 1 1 1 1
+//
+// Modify the below code to acheive the matrix 
+// as seen above (in lines 13 - 22).
+//
+int main(int argc, char* argv[])
+{
+    const int SIZE = 10;
+    int matrix[SIZE][SIZE];
+    string a = "this";
+    string b = "This";
+    if (a < b)
+    {
+        cout << a << "less than" << b << endl;
+    }
+    else
+        cout << a << " greater than " << b << endl;
+    //
+    // Populate the matrix
+    //
+    for (int i = 0; i < SIZE; i++){
+        for (int j = 0; j < SIZE; j++ ){
+            if (i == 0 || i == SIZE - 1){
+                matrix[i][j] = 1;
+            }
+            else if (j == 0 || j == SIZE - 1){
+                matrix[i][j] = 1;
+            }
+            else {
+                matrix[i][j] = 0;
+            }
+        }
+    }
+    //
+    // print out the matrix
+    //
+    for (int i = 0; i < SIZE; i++){
+        for (int j = 0; j < SIZE; j++ ){
+            cout << matrix[i][j] << "    ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
