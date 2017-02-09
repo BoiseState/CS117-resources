@@ -1,0 +1,127 @@
+// vector.cpp : Defines the entry point for the console application.
+//
+
+
+#include <string>
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+
+int const ROWS = 10;
+int const MAX_COL = 10;
+//
+// We will print out the students of the class along with the scores.
+// Uses parallel vectors; ie, student[i]'s grade is in grade[i].
+//
+// Inputs:
+//		students()	- vector that holds the students' names
+//		grades()	- vector that holds the students' grades
+//
+// Outputs:
+//		None.
+//
+// Assumptions / Limitations:
+//		None
+//
+void print_student_scores( const vector<string>& students, const vector<double>& grades)
+{
+    for (int i = 0; i < students.size(); i++)
+    {
+        cout << "student[" << i << "] Name: " << students.at(i) << "\t grade: " << grades.at(i) << endl;
+    }
+}
+//
+// Get the statistics of the students' grades: max, min, average
+//
+// Inputs:
+//		scores	- vector that holds the students' grades
+//		size		- size of the arrays
+//		max			- the highest grade (by ref)
+//		min			- the lowest grade (by ref)
+//		avg			- the grade average (by ref)
+//
+// Returns (by reference):
+//		max			- the highest grade
+//		min			- the lowest grade
+//		avg			- the grade average
+//
+void get_array_stats(vector<double> scores, int size, double& max, double& min, double& avg)
+{
+    //
+    // simple search for max / min and computing average
+    //
+    max = scores[1];
+    min = scores[1];
+    int sum = 0;
+    for (int i = 1; i < size; i++)
+    {
+        if (scores[i] < min)
+            min = scores[i];
+        if (scores[i] > max)
+            max = scores[i];
+        sum += scores[i];
+    }
+    avg = sum / size;
+}
+
+int main()
+{
+    vector<string> students;
+    int size = students.size();
+    cout << "Vector size = " << size << endl;
+    students.push_back("Homer");
+    students.push_back("Marge");
+    students.push_back("Bart");
+    students.push_back("Lisa");
+    students.push_back("Maggie");
+    size = students.size();
+    cout << "Vector size = " << size << endl;
+    string name = students.at(3);
+    cout << "name = " << name << endl;
+
+    vector <double> scores;
+    //
+    // set test scores
+    //
+    for (int i = 0; i < students.size(); i++)
+    {
+        scores.push_back(i * 10);
+    }
+    //
+    // add a student and grade
+    //
+    students.push_back("Peter");
+    scores.push_back(95);
+
+
+    //
+    // get array stats...
+    //
+    double max = 0;
+    double min = 100;
+    double avg = 0;
+    get_array_stats(scores, students.size(), max, min, avg);
+    print_student_scores(students, scores);
+    //
+    // print score stats
+    //
+    cout << endl << "score statistics : " << endl;
+    cout << endl << "Max score:     " << max << endl;
+    cout << "Min score:     " << min << endl;
+    cout << "Average score: " << avg << endl;
+    //
+    // what happens if we access array element 11?
+    //
+    students.push_back("Jonny Quest");
+    students.push_back("Speed Racer");
+    students.push_back("Kimba");
+    students.push_back("Huell Howser");
+    students.push_back("Babe");
+    //
+    // how do vectors work?
+    //
+
+    return 0;
+}
