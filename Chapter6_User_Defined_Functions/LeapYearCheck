@@ -1,0 +1,50 @@
+// LeapYearCheck.cpp : Defines the entry point for the console application.
+//
+/*
+To determine whether a year is a leap year, follow these steps:
+		1. If the year is evenly divisible by 4, go to step 2. ...
+		2. If the year is evenly divisible by 100, go to step 3. ...
+		3. If the year is evenly divisible by 400, go to step 4. ...
+		4. The year is a leap year (it has 366 days).
+		5. The year is not a leap year (it has 365 days).
+*/
+
+#include <iostream>
+
+using namespace std;
+
+
+bool leap_year(int year) {
+	bool isLeapYr = false;
+
+	if (year % 4 == 0 ) {
+		if (year % 100 != 0){
+			isLeapYr = true;
+		}
+		else {
+			if (year % 400 == 0){
+				isLeapYr = true;
+			}
+		}
+	}
+	return isLeapYr;
+}
+
+int main(int argc, char* argv[])
+{
+	int year;
+	bool isLeap;
+
+	cout << "Enter the year to check for \"Leap Year\": ";
+	cin >> year;
+	isLeap = leap_year(year);
+	if (isLeap){
+		cout << year << " is a leap year.";
+	}
+	else {
+		cout << year << " is NOT a leap year.";
+	}
+	cout << endl;
+	return 0;
+}
+
