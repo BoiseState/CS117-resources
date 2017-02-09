@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+long long factRecursive(long long num)
+{
+	if (num == 0)
+		return 1;
+	else
+		return num * factRecursive(num - 1);
+}
+
+long long factIterate(long long num)
+{
+	long long total = 1;
+	if (num == 0)
+		return 1;
+	for (long long i = 1; i <= num; i++)
+		total *= i;
+	return total;
+}
+int main()
+{
+	cout << "fact of 6 == " << factIterate(6) << endl;
+	cout << "fact of 6 == " << factRecursive(6) << endl;
+	cout << endl << "What happens here..." << endl << endl;
+	cout << "fact of 21 == " << factIterate(21) << endl;
+	cout << "fact of 21 == " << factRecursive(21) << endl;
+
+	return 0;
+}
