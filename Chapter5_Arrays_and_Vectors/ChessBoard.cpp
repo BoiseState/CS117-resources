@@ -36,6 +36,11 @@ void createBoard(int board[][BOARDSIZE])
     {
         for (int j = 0; j < BOARDSIZE; j++)
         {
+            //
+            // We are using the XOR boolean operator here (one side of the XOR operator is TRUE only, not both)
+            // ANDing doesn't work - try changing the '^' to '&&' and see what happens...
+            // Attempt to understand why XORing the values of 'i' and 'j' works.
+            //
             if (i % 2 == 0 ^ j % 2 == 0)
                 board[i][j] = BLACK;
             else
