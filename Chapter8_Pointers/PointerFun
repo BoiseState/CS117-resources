@@ -1,0 +1,107 @@
+// PointerStuff.cpp : Defines the entry point for the console application.
+//
+
+#include <iostream>
+#include <vector>
+#include <ctime>
+#include <algorithm>
+
+using namespace std;
+
+
+int main(int argc, char argv[])
+{
+    int int1 = 16;
+    int int2 = 32;
+    int int3 = 128;
+    double dbl1 = 5.02;
+    int* intPtr1 = &int1;			// A pointer always points to an address, this points to the address of int1.
+    int* intPtr2 = &int2;			// this points to the address of int2
+    int* intPtr3 = NULL;
+
+    cout << "int1 == " << int1 <<
+         " int2 == " << int2 <<
+         " int3 == " << int3 << endl;// here are the values stored at int1 and int2 and int3
+    cout << "&int1 == " <<
+         &int1 << "  &int2 == " <<
+         &int2 << "  &int3 == " <<
+         &int3 << endl;				// here are the addresses of int1 and int2 and int3
+
+    cout << "addr of intPtr1 == "
+         << &intPtr1 << endl << endl;// here is the address on intPtr1.
+
+    cout << "intPtr1 == " <<
+         intPtr1 << "  *intPtr1 == " <<
+         *intPtr1 << endl << endl;	// *intPtr1 (defrenrencing intPtr1) is the value of what its pointing to (int1).
+
+
+    intPtr1 = &int2;				// now intPtr1 points to the address of int2
+    cout << "addr of intPtr1 == " <<
+         &intPtr1 << endl;			// here is the address of intPtr1
+    cout << "intPtr1 == " <<
+         intPtr1 << "  *intPtr1 == " <<
+         *intPtr1 << endl << endl;	// *intPtr1 (defrenrencing intPtr1) is the value of what its pointing to (int1).
+    //
+    // Now we can do some interesting things..
+    //
+    int int4 = *intPtr1 + *intPtr2;
+    cout << "int4 = *intPtr1 + *intPtr2" << endl;
+    cout << "What are we adding here?" << endl;
+    system("pause");
+    cout << "int4 == what intPtr1 is pointing to + what intPtr2 is pointing to === " << int4 << endl << endl;
+
+    cout << "what happens when we add 1 to intPrt1 (Remember intPtr1 points to an address in memory)..." << endl;
+    system("pause");
+    intPtr1++;
+    cout << "let's check the address of intPtr1, what intPtr1 points to, and check the value at that address" << endl;
+    cout << "&intPtr1 == " << &intPtr1 << endl;
+    cout << "intPtr1 ==  " << intPtr1 << endl;
+    cout << "*intPtr1 == " << *intPtr1 << endl;
+
+    cout << endl << "Now we will look at using pointers and arrays..." << endl;
+    system("pause");
+
+    int  anArray[10] = { 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 };
+    intPtr1 = anArray;
+    cout << "&anArray == " << &anArray << endl;
+    cout << "intPtr1   == " << intPtr1 << endl;
+    cout << "anArray[0] == *intPtr1, correct? " << anArray[0] << " == " << *intPtr1 << endl << endl;
+    cout << "so what does \"*(intPtr1 + 2)\" = ?. Let's see..." << endl;
+    system("pause");
+    cout << " \"*(intPtr1 + 2)\" == " << *(intPtr1 + 2) << endl;
+    cout << endl << "and if we add 3 to intPtr1, where do we point?" << endl;
+    cout << "if you said \"the address of the forth element in the array\", you would be correct." << endl;
+    cout << "Let's see..." << endl << endl;
+    intPtr1 += 3;
+    cout << "\"intPtr1 +  3\" == " << intPtr1;
+    cout << ", &anArray[3] == " << &anArray[3]  << " and..." << endl;
+    cout << " \"*(intPtr1 + 3)\" == " << *intPtr1;
+    cout << ", anArray[3] == " << anArray[3] << endl << endl;
+    /*
+    Now if the array were a double array, each element in the array would be 8 locations away from the last
+    as doubles require 8 locations and ints require only 4 locations.  We will quickly verify that below...
+    */
+    cout << "Now let's check the handling of doubles..." << endl << endl;
+    system("pause");
+    double *dblPtr1;
+    double  aDblArray[10] = { 3.14, 4.1, 6.2, 8.3, 10.4, 12.5, 14.6, 16.7, 18.8, 20.9 };
+    dblPtr1 = aDblArray;
+    cout << "&aDblArray == " << &aDblArray << endl;
+    cout << "dblPtr1   == " << dblPtr1 << endl;
+    cout << "aDblArray[0] == *dblPtr1, correct?... " << aDblArray[0] << " == " << *dblPtr1 << endl << endl;
+    cout << "so what does \"*(dblPtr1 + 2)\" = ?. Let's see..." << endl;
+    system("pause");
+    cout << " \"*(dblPtr1 + 2)\" == " << *(dblPtr1 + 2) << endl;
+    cout << endl << "and if we add 1 to dblPtr1, where do we point?" << endl;
+    cout << "if you said \"the address of the second element in the array\", you would be correct." << endl;
+    cout << "Let's see..." << endl << endl;
+    dblPtr1 += 1;
+    cout << "\"dblPtr1 +  1\" == " << dblPtr1;
+    cout << ", &aDblArray[1] == " << &aDblArray[1]  << " and..." << endl;
+    cout << " \"*(dblPtr1 + 1)\" == " << *dblPtr1;
+    cout << ", aDblArray[1] == " << aDblArray[1] << endl << endl;
+
+
+    return 0;
+}
+
