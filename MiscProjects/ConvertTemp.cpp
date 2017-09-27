@@ -31,10 +31,10 @@ using namespace std;
  *      converts a fahrenheit number to celsius
  *
  * Inputs
- *      temp:     double
+ *      double: temp
   *
  * Outputs / return value(s)
- *      The converted temperature
+ *      double: The converted temperature  
  *
  * Notes / assumptions
  *      None
