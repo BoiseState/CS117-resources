@@ -33,7 +33,7 @@ using namespace std;
  * Inputs
  *      temp:     double
   *
- * Outputs / return value{s)
+ * Outputs / return value(s)
  *      The converted temperature
  *
  * Notes / assumptions
