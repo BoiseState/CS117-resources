@@ -31,9 +31,31 @@ void Rectangle::setHeight(double h){
 
 }
 
+void Rectangle::setLength(double l){
+    if ( l < 1.0 ) {
+        cout << "Length must be > 1.0," << endl;
+        cout << "Length not modified!" << endl;
+    }
+    else {
+        this->length = l;
+        setArea(this->height, this->length);
+        setPerimeter(this->height,this->length);
+    }
+}
+
+
+double Rectangle::getHeight() const{
+    return this->height;
+}
+
+
+double Rectangle::getArea() const{
+    return this->area;
+}
 void Rectangle::setArea(double h, double l){
     this->area = h * l;
 }
+
 
 void Rectangle::printIt() const {
     cout << "The rectangle has the following characteristics:" << endl;
