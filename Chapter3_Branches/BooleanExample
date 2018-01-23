@@ -1,0 +1,31 @@
+
+#include <iostream>
+
+using namespace std;
+/*
+	REMEMBER
+	For conditional with &&, BOTH sides must be true
+	For conditional with ||, ONLY one side must be true
+
+	The evaluation occurs in the following steps:
+	1)  Do what's in parenthesis first:
+		!found || z > 0, which evaluates to TRUE because left side is true
+	2)  AND the above with found (Left to Right precendence)
+	    found && TRUE, which evaluates to FALSE because left side is false
+	3)  AND the above with z+x==5
+		FALSE && z+x == 5, which evalues to FALSE because left side is false
+	4)  OR the above with x+y>6
+		x+y>6 || FALSE, which evaluates to TRUE because the left side is true
+*/
+int main()
+{
+    bool found = false;
+    int x = 5, y = 3, z = -2;
+
+    if (x + y > 6 || found && (!found || z > 0) && z + x == 5)
+        cout << "Statement is true";
+    else
+        cout << "Statement is false";
+    cout << endl;
+    return 0;
+}
