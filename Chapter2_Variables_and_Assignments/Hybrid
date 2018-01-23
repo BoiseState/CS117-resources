@@ -1,0 +1,37 @@
+// Hybrid.cpp : Basic variable assignments...
+//
+
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char* argv[])
+{
+    const int DURATION = 5; // in years
+
+    double carPrice;
+    double gasPrice;
+    double mpg;
+    double yrMiles;
+    double resalePrice;     // after DURATION in years
+    double totalCostOfOwnership;
+    double yearlyGasCost, totalGasCost;
+
+    cout << "Enter the price of the car: ";
+    cin >> carPrice;
+    cout << "Enter the current price for a gallon of gas: ";
+    cin >> gasPrice;
+    cout << "Enter the estimated MPG for the car: ";
+    cin >> mpg;
+    cout << "Enter the estimated miles driven per year: ";
+    cin >> yrMiles;
+    cout << "Enter the estimated resale value in " << DURATION << " years: ";
+    cin >> resalePrice;
+    yearlyGasCost = gasPrice * (yrMiles / mpg);
+    totalGasCost = yearlyGasCost * DURATION;
+    totalCostOfOwnership = carPrice + totalGasCost - resalePrice;
+    cout << "The total cost of ownership for this car is " << totalCostOfOwnership << endl;
+
+    return 0;
+}
+
