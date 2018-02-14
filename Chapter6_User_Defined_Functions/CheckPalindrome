@@ -1,0 +1,52 @@
+#include <iostream>
+
+using namespace std;
+/*
+ * Function name
+ *      isPalindrome
+ *
+ * Function description
+ *      Determine if a string is a palindrome
+ *
+ * Inputs
+ *      string str
+ *
+ * Outputs / Return value(s)
+ *      bool:  true if the string is a palindrome; false otherwise.
+ *
+ * Noes / Assumptions
+ *      Determination of palindrome is case sensitive. If case insensitive is needed
+ *      convert each character to lower case while performing check.
+ */
+bool isPalindrome(string str)
+{
+    bool isPal = true;
+    int i=0;
+    int j=str.length()-1; // don't forget to subtract 1 to account for index starting a zero.
+
+    while (i <= j && isPal)
+    {
+        if (str[i] != str[j])
+            isPal = false;
+        i++;
+        j--;
+    }
+    return isPal;
+}
+int main() {
+    bool isPal;
+    string str;
+
+    do {
+        cout << "Enter a string to check, 'x' to exit:";
+        cin >> str;
+        isPal = isPalindrome(str);
+        if (isPal)
+            cout << str << " is a palindrome.";
+        else
+            cout << str << " is not a palindrome.";
+        cout << endl;
+    } while (str != "x");
+
+    return 0;
+}
