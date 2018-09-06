@@ -1,0 +1,53 @@
+#include<iostream>
+#include<iomanip>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+
+	//Type	  //Instance    //Assignment
+	int			integer = 3.14159265359;
+	int			iNum = 5;
+	double		Double = 3.14159265359;
+	char		character = '3';
+    char        c = -3;
+	string		String = "3.14159265359";
+	bool		isTrue = false;
+    int i;
+
+
+    double result = iNum / 7.4567 +24;
+	cout  << fixed << setprecision(2);
+	cout << "The result is: " << result << endl;
+	//Note that Integer is simply the whole number of the variable.
+	cout << "Integer: " << integer << endl;
+
+	//Double can hold up to 15 digits in exponential notation up to times +/- 10^308,
+	//	but 'cout' automatically rounds the display to 6 digits.
+	cout << "Double: " << Double << endl;
+
+	//Characters (chars) can only hold a single letter, number, or symbol from the ASCII table.
+	cout << "Character: " << character << endl;
+
+	//Strings can hold a practically unlimited number of characters.
+	cout << "String: \"" << String << "\"" << endl;
+
+    // Note we cannot compare the string, String to the int, Integer, even though we human might
+    // quickly interpret the number represented by the string, String to be the same number as what is
+    // represented by the int, Integer...
+    //if (String == Integer)
+
+	//booleans are binary - they can hold true or false - nothing else
+	//booleans are usually used to signify if a 'task' is complete
+	//for instance:
+	//  Are we finished processing data: yes or no
+        cout << setw(60);
+	cout << "Have we finished processing data?..." << endl;
+	if (isTrue)
+		cout << "Yes we have finished getting all the data..." << endl;
+	else
+		cout << "No we haven't finished getting all of the data..." << endl;
+
+}
