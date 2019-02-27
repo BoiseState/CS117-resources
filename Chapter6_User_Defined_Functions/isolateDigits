@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void isolateDigit(int& num, int i, int& digit)
+{
+    digit = num/int(pow(10,i));
+
+    double tmpValue = pow(10,i);
+    int divisor = int(tmpValue);
+    num = num % divisor;
+}
+int main() {
+    int userNum = 0;
+int digit = 0;
+    cout << "Please enter a non-negative 5 digit number: " << endl;
+    cin  >> userNum;
+    cout << userNum << " consists of:" << endl;
+
+    for (int i = 4; i >= 0; --i) {
+        isolateDigit(userNum, i, digit);
+        cout << digit;
+        switch(i)   {
+            case 4: cout << " in the ten thousands digit";
+            break;
+            case 3: cout << " in the thousands digit";
+            break;
+            case 2: cout << " in the hundreds digit";
+            break;
+            case 1: cout << " in the tens digit";
+            break;
+            case 0: cout << " in the ones digit";
+            break;
+            default: cout << "Error: should never occur";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
