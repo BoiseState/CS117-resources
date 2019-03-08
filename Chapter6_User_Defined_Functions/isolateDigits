@@ -10,7 +10,7 @@ using namespace std;
  *
  * Inputs
  * int: (REFERENCE) num    - number we want to dissect.
- * int: i                  - number of digits in the number we want to dissect.
+ * int: i                  - index of digit in the number we want to dissect.
  * int: (REFERENCE) digit  - the isolated digit in the number.
  *
  * Outputs / return value(s)
