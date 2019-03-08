@@ -1,18 +1,39 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-
+/*
+ * Function name
+ * isolateDigits
+ *
+ * Function description
+ * isolate a digit in a number.
+ *
+ * Inputs
+ * int: (REFERENCE) num    - number we want to dissect.
+ * int: i                  - number of digits in the number we want to dissect.
+ * int: (REFERENCE) digit  - the isolated digit in the number.
+ *
+ * Outputs / return value(s)
+ * int: (REFERENCE) num
+ * int: (REFERENCE) digit
+ *
+ * Notes / assumptions
+ * This function only works for positive numbers.
+ * This function uses pass by reference because we need to return two things (remember,
+ * functions, by default, will only return 1 thing).  We want to return the digit that we are
+ * isolating AND also the original number because we modify the to isolate the
+ */
 void isolateDigit(int& num, int i, int& digit)
 {
-    digit = num/int(pow(10,i));
+    digit = num/int(pow(10,i));        //Start with the MSD
 
-    double tmpValue = pow(10,i);
-    int divisor = int(tmpValue);
-    num = num % divisor;
+    double tmpValue = pow(10,i);       //Determine Remainder
+    int divisor = int(tmpValue);       //Why is this step necessary??
+    num = num % divisor;               //Set the new number we will isolate digit from...
 }
 int main() {
     int userNum = 0;
-int digit = 0;
+    int digit = 0;
     cout << "Please enter a non-negative 5 digit number: " << endl;
     cin  >> userNum;
     cout << userNum << " consists of:" << endl;
