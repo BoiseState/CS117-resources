@@ -7,9 +7,10 @@
 
 #include "Person.h"
 
-class MilitaryMember: public Person {
+class MilitaryMember : public Person {
 
 public:
+    MilitaryMember(string branch, string rank, string fname, string lname, char sex, string ssNum);
     void setBranch(string name);
 
     void setRank(string rank);
@@ -23,3 +24,4 @@ private:
 
 
 #endif //INHERITANCEEXAMPLE_MILITARYMEMBER_H
+
