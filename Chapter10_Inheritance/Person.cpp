@@ -1,10 +1,23 @@
 //
 // Created by forev_000 on 6/17/2015.
 //
-
-#include <iostream>
 #include "Person.h"
+#include <iostream>
 
+Person::Person()
+{
+}
+
+Person::Person(string fname, string lname, char sex, string ssNum)
+{
+    firstName = fname;
+    lastName = lname;
+    //
+    // what is wrong with this..
+    //
+    this->sex = sex;
+    socialSecurityNumber = ssNum;
+}
 
 void Person::setFname(string name)
 {
@@ -28,9 +41,12 @@ void Person::set_ssNum(string ssNum)
 
 void Person::printPerson() const
 {
-    cout << "Name: " << this->firstName <<" " << this->lastName <<
-                                                 endl;
+    cout << "Name: " << this->firstName << " " << this->lastName <<
+         endl;
     cout << "Sex:  " << this->sex << endl;
     cout << "SS #: " << this->socialSecurityNumber << endl;
+}
+void Person::setColor(string color) {
+    this->color = color;
 }
 
