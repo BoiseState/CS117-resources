@@ -5,12 +5,18 @@
 #include <iostream>
 #include "Student.h"
 
+Student::Student()
+{
+}
+
 void Student::setMajor(string major) {
     this->major = major;
 }
 
 void Student::setStudentID(int id) {
     this->studentID = id;
+    Person::setColor("this");
+    set
 }
 
 void Student::printPerson() const {
