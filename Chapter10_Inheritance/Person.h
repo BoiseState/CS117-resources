@@ -10,6 +10,10 @@ using namespace std;
 
 class Person {
 public:
+
+    Person();
+    Person(string fname, string lname, char sex, string ssNum);
+
     void setFname(string name);
 
     void setLname(string name);
@@ -20,7 +24,11 @@ public:
 
     void printPerson() const;
 
+protected:
+    void setColor(string color);
+
 private:
+    string color;
     char sex;
     string firstName;
     string lastName;
