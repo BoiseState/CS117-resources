@@ -10,6 +10,7 @@
 
 class Student : public Person {
 public:
+    Student();
     void setMajor(string major);
 
     void setStudentID(int id);
