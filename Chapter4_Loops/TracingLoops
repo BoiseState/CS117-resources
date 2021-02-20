@@ -4,22 +4,85 @@ using namespace std;
 
 int main() {
 
-    string simonPattern;
-    string userPattern;
-    int userScore = 0;
-    int i = 0;
-
-
-3    cout << "userScore: " << userScore << endl;
 
     int sum = 4;
-    int num = 0;
-    cin >> num;
-    for ( int j=1 ; j <= 5; j++)
+    int num = 1;
+    for (int j = 1; j <= 5; j++)
     {
         sum = sum + num;
-        cin >> num;
+        num += j;
     }
     cout << sum << endl;
-   return 0;
+
+    int product = 1;
+    int k = 0, j = 6;
+    while (k <= 5)
+    {
+        product *= j;
+        j -= 1;
+        k++;
+    }
+    cout << "product = " << product << endl;
+
+    sum = 0;
+    int i = 2;
+    int end = 10;
+    while (i < end)
+    {
+        sum += end - i;
+        i++;
+    }
+    cout << sum << endl;
+
+    int inputN;
+    sum = 0;
+    int x = 5;
+    i = 1;
+    cin >> inputN; // assume inputN == 3
+
+    while (i < 5)
+    {
+        x = x + 1;
+        sum = sum + x / inputN;
+        //cin >> inputN;
+        i++;
+
+    }
+    cout << "Sum = " << sum << endl;
+
+    // a for loop
+    x = 0;
+    sum = 0;
+    for (int i = 1; i < 5; i++)
+    {
+        x = x + 1;
+        sum = sum + x / inputN;
+
+    }
+    cout << "2Sum = " << sum << endl;
+
+    while (i < 4)
+    {
+        x = x + 1;
+        sum = sum + x / inputN;
+
+        i++;
+
+    }
+    cout << "3Sum = " << sum << endl;
+
+    x = 2;
+    sum = 0;
+    inputN = 2;
+    i = 0;
+    do
+    {
+        x = x + 1;
+        sum = sum + x / inputN;
+        i++;
+
+    } while (i < 6);
+    cout << "4Sum = " << sum << endl;
+
+    return 0;
 }
